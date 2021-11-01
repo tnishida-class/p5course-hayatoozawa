@@ -1,6 +1,6 @@
 // テキスト「アニメーションの基本」
 let x, y, vx, vy;
-const g = 1; // 重力加速度
+const g = 2           ; // 重力加速度
 const vyMax = 30;
 
 function setup(){
@@ -31,8 +31,15 @@ function draw(){
   if(y > height){ vy = -1 * vy; }
   x = constrain(x, 0, width);
   y = constrain(y, 0, height);
+  if(keyIsDown(LEFT_ARROW)){ x -= 5; }
+  if(keyIsDown(RIGHT_ARROW)){ x += 5; }
+
 }
 
+function keyPressed(){
+ if(keyCode == UP_ARROW){
+   vy -= 100;
+ }}
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }
