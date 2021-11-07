@@ -17,17 +17,21 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
+  //const b = { x: width / 2, y: height / 2, size: random(10) + 5, vx: random(-5, 5), vy:random(-5, 5) };
+  //balls.push(b);
 }
 
 function mouseDragged(){
   const dx = mouseX - pmouseX;
-  const dy = mouseY - pmouseY;
-  if(mag(dx, dy) > 5){
-    const b = { x: mouseX, y: mouseY, size: 20, vx: dx, vy: dy };
+const dy = mouseY - pmouseY;
+if(mag(dx, dy) > 5){
+    const b = { x: mouseX, y:mouseY, size: random(10) + 5, vx: dx, vy: dy };
     balls.push(b);
   }
 }
 
+
+console.log()
 function windowResized(){
   resizeCanvas(windowWidth, windowHeight);
 }

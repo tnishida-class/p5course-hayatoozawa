@@ -19,6 +19,24 @@ function setup(){
   const dx = width / scores.length;
   let px, py; // 線を引くために一つ前の点を覚えておく変数
   for(let i = 0; i < scores.length; i++){
+    if(i > 0){
+      px = (i -1) * dx
+      py = scores[i -1] * height / 100
+      strokeWeight(1);
+      line(px, height - py, i * dx, height - (scores[i] * height / 100));
+      strokeWeight(10);
+      point(i * dx, height- (scores[i] * height / 100));
+    }
+    if(i == 0){
+      px = i * dx
+      py = scores[i] * height / 100
+      strokeWeight(1);
+      line(px, height - py, (i + 1) * dx, height - (scores[i + 1] * height / 100));
+      strokeWeight(10);
+      point(i * dx, height- (scores[i] * height / 100));
+    }
+
     // BLANK[1]
   }
 }
+console.log()
