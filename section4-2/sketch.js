@@ -10,6 +10,7 @@ function setup(){
 }
 
 function draw(){
+  count++
   background(160, 192, 255);
   for(let i = 0; i < balls.length; i++){
     let b = balls[i];
@@ -17,8 +18,9 @@ function draw(){
     b.x += b.vx;
     b.y += b.vy;
   }
+  //if(count % 60 == 0){
   //const b = { x: width / 2, y: height / 2, size: random(10) + 5, vx: random(-5, 5), vy:random(-5, 5) };
-  //balls.push(b);
+  //balls.push(b);}
 }
 
 function mouseDragged(){
